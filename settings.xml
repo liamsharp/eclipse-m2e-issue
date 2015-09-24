@@ -1,0 +1,15 @@
+<settings>
+  <profiles>
+    <profile>
+      <id>default</id>
+      <properties>
+        <!-- Values for OS X -->
+        <jre7.home>/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre</jre7.home>
+        <jre8.home>/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre</jre8.home>
+      </properties>    
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>default</activeProfile>
+  </activeProfiles>
+</settings>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>foo.bar</groupId>
+	<artifactId>lib</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>lib</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<!-- If this uses a property from ~/.m2/settings.xml commons-lang does 
+			not appear in the Maven Dependanies for the project "app", resulting in: Exception 
+			in thread "main" java.lang.NoClassDefFoundError: org/apache/commons/lang/WordUtils 
+			when run in Eclipse. Works if you use java.home or a property defined in this pom. -->
+		<dependency>
+			<groupId>javafx</groupId>
+			<artifactId>jfxrt</artifactId>
+			<scope>system</scope>
+			<version>1.0</version>
+			<!-- If Eclipse is running in Java 8, use this line and change to jre8.home to expose issue -->
+			<systemPath>${java.home}/lib/ext/jfxrt.jar</systemPath>
+
+			<!-- If Eclipse is running in Java 7, use this line and change to jre7.home to expose issue -->
+			<!-- <systemPath>${java.home}/lib/jfxrt.jar</systemPath>-->
+
+		</dependency>
+
+	</dependencies>
+</project>
